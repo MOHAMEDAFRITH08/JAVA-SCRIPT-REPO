@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Normal Validation</title>
+  <style>
+    .container {
+      background-color: blue;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .main {
+      background-color: cadetblue;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <table>
+        <tr>
+          <td>
+            <labeL>User Name:</labeL>
+          </td>
+          <td>
+            <input id="ename" value="" name="ename" type="text" onkeyup="func()">
+          </td>
+          <td>
+            <span id="sp1"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <labeL>Password:</labeL>
+          </td>
+          <td>
+            <input id="epassword" value="" name="epassword" type="password" onkeyup="funct()">
+          </td>
+          <td>
+            <span id="sp2"></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script>
+    let func = () => {
+      let name = document.getElementById("ename").value;
+      let sp = document.getElementById("sp1");
+
+      if (name.length >= 5) {
+        sp.innerHTML = "strong";
+        sp.style.color = "green";
+      } else {
+        sp.innerHTML = "Must be 5 characters";
+        sp.style.color = "red";
+      }
+    };
+    let funct = () => {
+      let password = document.getElementById("epassword").value;
+      let sp = document.getElementById("sp2");
+
+      if (password.length >= 5) {
+        sp.innerHTML = "strong";
+        sp.style.color = "green";
+      } else {
+        sp.innerHTML = "Must Be 5 digit";
+        sp.style.color = "red";
+      }
+    };
+
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

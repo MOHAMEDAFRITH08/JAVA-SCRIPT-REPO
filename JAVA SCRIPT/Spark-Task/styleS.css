@@ -1,0 +1,32 @@
+.back_color{
+    background-color: orange;
+    height: 100%;
+    /*  width: 100vw; */
+} 
+.inner_color{
+    margin: auto;
+}
+.white_div{
+    background-color:white;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;  
+}
+span{
+    color: white;
+}
+.click_one{
+     margin-left: 30%;
+    border-radius: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    border: none;
+    margin-top: 5%;
+}
+.login_end{
+    text-align: center;
+    margin-top: 2%;
+}
+.error_name{
+    border-color: red;
+}

@@ -1,0 +1,49 @@
+.backroundColor {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    /* z-index: -1; */
+}
+
+.buttonStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+}
+
+.image12 {
+    width: 200px;
+}
+
+.headStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 70px;
+
+}
+
+.btnn {
+    border-radius: 10px;
+}
+
+.contentDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18%;
+    height: 15vh;
+    bottom: 15px;
+    left: 38rem;
+    position: absolute;
+    background-color: aliceblue !important;
+    border: 5px solid red;
+    border-radius: 15px;
+}

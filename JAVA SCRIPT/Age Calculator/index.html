@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Age Calculator</title>
+</head>
+
+<body>
+    <h1>Age Calculator</h1>
+    <label for="birthdate">Enter your birthdate:</label>
+    <input type="date" id="birthdate">
+    <button id="calculateAge">Calculate Age</button>
+    <p>Your age is: <span id="ageOutput"></span></p>
+
+    <script>
+        const calculateAgeButton = document.getElementById("calculateAge");
+        const birthdateInput = document.getElementById("birthdate");
+        const ageOutput = document.getElementById("ageOutput");
+
+        calculateAgeButton.addEventListener("click", function () {
+            const birthdateString = birthdateInput.value;
+            const birthdate = new Date(birthdateString);
+            const today = new Date();
+
+            const age = today.getFullYear() - birthdate.getFullYear();
+
+           
+            if (
+                today.getMonth() < birthdate.getMonth() ||
+                (today.getMonth() === birthdate.getMonth() && today.getDate() < birthdate.getDate())
+            ) {
+                age--;
+            }
+
+            ageOutput.innerHTML = age;
+        });
+    </script>
+</body>
+
+</html>

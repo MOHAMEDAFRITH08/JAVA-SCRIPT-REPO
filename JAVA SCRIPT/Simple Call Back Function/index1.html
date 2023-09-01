@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Normal Call back Function
+        function dblr(n1, n2, calc) {
+            return calc(n1, n2);
+        }
+        function add(n1, n2) {
+            return n1 + n2;
+        }
+        function mul(n1, n2) {
+            return n1 * n2;
+        }
+        console.log(dblr(4, 2, add));
+        console.log(dblr(4, 2, mul));
+
+        //Arrow Function
+        function demo() {
+            console.log("Hello!");
+        }
+        demo();
+        let add = (a, b) => {
+            console.log("ADD Value :", a + b);
+        }
+        add(10, 2);
+
+        //Using forEach in Aroow Function
+        const printnum = {
+            pharse: "The Current Value is :",
+            numbers: [1, 2, 3, 4],
+            loop() {
+                this.numbers.forEach((number) => {
+                    console.log(this.pharse, number)
+                })
+            },
+        }
+        printnum.loop()
+    </script>
+
+</body>
+
+</html>

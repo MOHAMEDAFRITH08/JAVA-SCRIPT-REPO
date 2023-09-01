@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label>Emp Name</label>
+            <input type="text" id="ename" value="" onkeyup="checkuser()" /><span id="sp1"></span>
+
+        </div>
+        <div>
+            <label>Emp Id</label>
+            <input type="text" id="eid" value="" onkeyup="empid()" /><span id="sp2"></span>
+
+        </div>
+        <div>
+            <label>Designation</label>
+            <input type="text" id="edess" value="" onkeyup="edes()" /><span id="sp3"></span>
+
+        </div>
+        <div>
+            <label>Basic Pay</label>
+            <input type="text" id="epay" value="" onkeyup="setVal()" />
+        </div>
+        <div>
+            <label>HRA</label>
+            <input type="text" id="ehra" value="" />
+        </div>
+        <div>
+            <label>DA</label>
+            <input type="text" id="eda" value="" />
+        </div>
+        <div>
+            <label>PF</label>
+            <input type="text" id="epf" value="" />
+        </div>
+        <div>
+            <label>Net Salary</label>
+            <input type="text" id="enet" value="" />
+        </div>
+        <div>
+            <label>Gross Salary</label>
+            <input type="text" id="egrs" value="" />
+        </div>
+    </form>
+    <script>
+        function checkuser() {
+            let userName = document.getElementById('ename').value;
+            let span1 = document.getElementById('sp1');
+            let output;
+            if (userName.length > 5) {
+                output = "Good";
+            }
+            else {
+                output = "Bad";
+            }
+            sp1.innerHTML = output;
+
+
+        }
+        function empid() {
+            let empid = document.getElementById('eid').value;
+            let span2 = document.getElementById('sp2');
+
+            if (empid != "") {
+                span2.innerHTML = "";
+            }
+            else {
+                span2.innerHTML = "Please Enter ID";
+            }
+        }
+        function edes() {
+            let des = document.getElementById('edess').value;
+            let span3 = document.getElementById('sp3');
+
+            if (des != "") {
+                span3.innerHTML = "";
+            }
+            else {
+                span3.innerHTML = "Please Enter Data";
+            }
+        }
+
+        function setVal() {
+            let bp = document.getElementById('epay').value;
+            let hra = document.getElementById('ehra').value = bp * (10 / 100);
+            let da = document.getElementById('eda').value = bp * (5 / 100);
+            let pf = document.getElementById('epf').value = bp * (15 / 100);
+            bp = parseInt(bp);
+            hra = parseInt(hra);
+            da = parseInt(da);
+            let nets = document.getElementById('enet').value = (bp + hra + da);
+            pf = parseInt(pf);
+            nets = parseInt(nets);
+            let grss = document.getElementById('egrs').value = (nets - pf);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pay Slip</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        .container {
+            background-image: linear-gradient(white, gray);
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* text-align: center; */
+        }
+
+        .sub1 {
+            background-color: skyblue;
+        }
+        .me{
+            width: 280px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="sub1">
+                <h2 class="text-center">PaySlip</h2>
+                <table>
+                    <h3 class="text-center">Employee Details</h3>
+                    <tr>
+
+                        <div class="form">
+                            <td>
+                                <label>Employee Name</label>
+                            </td>
+                            <td>
+                                <input type="text" class="me" id="name" placeholder="Enter Your Name" />
+                            </td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form">
+                            <td>
+                                <label>Employee Id</label>
+                            </td>
+                            <td>
+                                <input type="email" id="eid" class="me" placeholder="Enter Your Gmail" />
+                            </td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form">
+                            <td>
+                                <label>Phone</label>
+                            </td>
+                            <td>
+                                <input type="text" id="phone" class="me" placeholder="Enter Your Phone Number" />
+                            </td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form">
+                            <td>
+                                <label>Age</label>
+                            </td>
+                            <td>
+                                <input type="text" id="age" class="me" placeholder="Enter Your Phone Age" />
+                            </td>
+                        </div>
+                    </tr>
+                    <tr class="text-center">
+                        <div class="form">
+                            <td>
+                                <button id="saveBtn">Save</button>
+                            </td>
+                            <td>
+                                <button id="printBtn">Print</button>
+                            </td>
+                        </div>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <script>
+        //Normal Js Object
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            const payData = {
+                name: document.getElementById('name').value,
+                eid: document.getElementById('eid').value,
+                age: document.getElementById('age').value,
+                phone: document.getElementById('phone').value,
+            };
+            localStorage.setItem('payData', JSON.stringify(payData));
+            alert("Payslip data Saved Successfully!");
+            document.getElementById('name').value = "";
+        }
+        );
+        document.getElementById('printBtn').addEventListener('click', function () {
+            const payData = JSON.parse(localStorage.getItem('payData'));
+            if (payData) {
+                const print = window.open(" ", '_blank');
+                print.document.write(`Name : ${payData.name}`);
+                print.document.write(`  Eid : ${payData.eid}`);
+                print.document.write(`  Age :  ${payData.age}`);
+                print.document.write(`  Phone : ${payData.phone}`);
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

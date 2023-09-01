@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+    h3{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    </style>
+</head>
+<body>
+    <div id="htmlId">
+        <h3 id="add" class="mt-5"></h3>
+        <h3 id="sub" class="mt-5"></h3>
+        <h3 id="mul" class="mt-5"></h3>
+        <h3 id="div" class="mt-5"></h3>
+        <h3 id="mod" class="mt-5"></h3>
+    </div>
+    <script>
+    var htmlId = document.getElementById("htmlId");
+    var firstNumber = parseInt(prompt("Enter first number : "));
+    var secNumber = parseInt(prompt("Enter second number : "));
+    var add = firstNumber + secNumber;
+    var sub = firstNumber - secNumber;
+    var mul = firstNumber * secNumber;
+    var div = firstNumber / secNumber;
+    var mod = firstNumber % secNumber;
+    document.getElementById("add").innerHTML = " The sum is : " + add;
+    document.getElementById("sub").innerHTML = " The sum is : " + sub;
+    document.getElementById("mul").innerHTML = " The sum is : " + mul;
+    document.getElementById("div").innerHTML = " The sum is : " + div;
+    document.getElementById("mod").innerHTML = " The sum is : " + mod;
+    </script>
+</body>
+</html>
